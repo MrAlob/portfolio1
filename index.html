@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Murtada Al-Obaidi | Front-End Student Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-section="top">
+      <div class="brand">
+        <p class="brand__name">Murtada Al-Obaidi</p>
+        <p class="brand__role">Front-End Student</p>
+      </div>
+      <nav>
+        <button class="nav__btn" data-target="about">About</button>
+        <button class="nav__btn" data-target="skills">Skills</button>
+        <button class="nav__btn" data-target="projects">Projects</button>
+        <button class="nav__btn" data-target="contact">Contact</button>
+      </nav>
+    </header>
+
+    <main id="app" class="app">
+      <section id="about" class="panel panel--active" data-panel>
+        <div>
+          <p class="eyebrow">Hello!</p>
+          <h1>I design and build friendly web experiences.</h1>
+          <p>
+            I'm a junior front-end developer who loves translating ideas into
+            clean, responsive UI using just HTML, CSS, and JavaScript.
+            If you need someone reliable to craft polished sections, document
+            decisions, and keep iterating, I'm ready to help.
+          </p>
+          <ul class="highlights">
+            <li>Ship semantic, accessible layouts that work on every screen</li>
+            <li>Prototype fast with component-based CSS utility patterns</li>
+            <li>Communicate progress clearly and stay curious when problems pop up</li>
+          </ul>
+          <div class="cta-row">
+            <button class="cta" data-target="projects">See projects</button>
+            <a class="link" href="mailto:murtada@alobaidi.no">Email me</a>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=700&q=80" alt="Working" />
+      </section>
+
+      <section id="skills" class="panel" data-panel>
+        <h2>Skills in progress</h2>
+        <p>I like learning in tiny, steady steps. Here's what I'm practicing now:</p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>HTML</h3>
+            <p>Semantic structure, forms, and accessibility basics. ADD MORE</p>
+          </article>
+          <article class="card">
+            <h3>CSS</h3>
+            <p>Layouts with Flexbox & Grid plus modern theming tricks. ADD MORE</p>
+          </article>
+          <article class="card">
+            <h3>JavaScript</h3>
+            <p>DOM queries, state toggles, and interactive widgets. ADD MORE</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="panel" data-panel>
+        <div class="section-head">
+          <h2>Projects</h2>
+        </div>
+        <div class="project-list">
+          <article class="project">
+            <header>
+              <p class="project__tag">Project 1</p>
+              <h3>Name</h3>
+            </header>
+            <p>
+              What
+            </p>
+            <button class="ghost-btn">Live demo</button>
+          </article>
+          <article class="project">
+            <header>
+              <p class="project__tag">Project 2</p>
+              <h3>Name</h3>
+            </header>
+            <p>
+             What
+            </p>
+            <button class="ghost-btn">Live demo</button>
+          </article>
+          <article class="project">
+            <header>
+              <p class="project__tag">Project 3</p>
+              <h3>Name</h3>
+            </header>
+            <p>
+             What
+            </p>
+            <button class="ghost-btn">Live demo</button>
+        </div>
+      </section>
+
+      <section id="contact" class="panel" data-panel>
+        <div class="section-head">
+          <h2>Let’s build together</h2>
+          <p>Have feedback or want to work on a small project together? Reach out!</p>
+        </div>
+        <form class="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Ada Lovelace" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Let's build a fun mini app." required></textarea>
+          </label>
+          <button type="submit" class="cta">Send message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Murtada Al-Obaidi</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
