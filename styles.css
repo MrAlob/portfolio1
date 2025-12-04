@@ -43,6 +43,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  animation: textShrink 2.4s ease forwards;
 }
 
 .welcome-overlay.is-hidden {
@@ -61,6 +62,19 @@ body {
   100% {
     opacity: 0;
     transform: scale(0.98);
+  }
+}
+
+@keyframes textShrink {
+  0% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(0.7);
+    opacity: 0.9;
   }
 }
 
