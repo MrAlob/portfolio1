@@ -5,6 +5,7 @@ const navButtons = document.querySelectorAll("nav [data-target]");
 const jumpButtons = document.querySelectorAll(".cta[data-target]");
 const yearEl = document.querySelector("#year");
 const contactForm = document.querySelector(".contact-form");
+const welcomeOverlay = document.querySelector(".welcome-overlay");
 
 // Track simple UI state (which panel is visible).
 const state = {
@@ -66,6 +67,14 @@ function init() {
   hydrateYear();
   wireNavigation();
   wireContactForm();
+  fadeWelcomeOverlay();
+}
+
+function fadeWelcomeOverlay() {
+  if (!welcomeOverlay) return;
+  welcomeOverlay.addEventListener("animationend", () => {
+    welcomeOverlay.classList.add("is-hidden");
+  });
 }
 
 document.addEventListener("DOMContentLoaded", init);

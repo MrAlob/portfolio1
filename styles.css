@@ -25,6 +25,44 @@ body {
   padding: 0 1.5rem 2rem;
 }
 
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  animation: overlayFade 2.4s ease forwards;
+  pointer-events: none;
+}
+
+.welcome-overlay__text {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.welcome-overlay.is-hidden {
+  display: none;
+}
+
+@keyframes overlayFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
 img {
   max-width: 100%;
   display: block;
