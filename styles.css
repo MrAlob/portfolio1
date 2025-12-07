@@ -14,7 +14,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -288,11 +287,13 @@ nav {
 .skill-journey {
   position: relative;
   margin-top: 2.5rem;
-  padding: 3rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5rem;
+  padding: 3rem clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2.5rem, 6vw, 4.5rem);
+  row-gap: clamp(3rem, 8vw, 5rem);
+  width: min(900px, 100%);
+  margin-inline: auto;
   min-height: 400px;
 }
 
@@ -327,7 +328,7 @@ nav {
   transform: translateY(2rem) scale(0.94);
   transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   z-index: 1;
-  width: min(360px, 95vw);
+  width: min(360px, 100%);
   isolation: isolate;
   pointer-events: none;
   visibility: hidden;
@@ -352,13 +353,15 @@ nav {
 }
 
 .timeline-card--left {
-  align-self: flex-start;
-  margin-left: clamp(0rem, 9vw, 14%);
+  grid-column: 1;
+  justify-self: end;
+  margin: 0;
 }
 
 .timeline-card--right {
-  align-self: flex-end;
-  margin-right: clamp(0rem, 9vw, 14%);
+  grid-column: 2;
+  justify-self: start;
+  margin: 0;
   justify-items: end;
   text-align: right;
 }
@@ -536,6 +539,40 @@ nav {
   margin-top: 0;
 }
 
+@media (max-width: 960px) {
+  .skill-journey {
+    grid-template-columns: 1fr;
+    padding: 2.4rem clamp(1.1rem, 6vw, 2rem);
+    row-gap: clamp(2.5rem, 8vw, 3.8rem);
+  }
+
+  .skill-journey__line {
+    left: clamp(1rem, 8vw, 1.7rem);
+    transform: translateX(0);
+  }
+
+  .timeline-card {
+    justify-items: start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .timeline-card--left,
+  .timeline-card--right {
+    grid-column: 1;
+    justify-self: stretch;
+  }
+
+  .timeline-card--right {
+    text-align: left;
+    justify-items: start;
+  }
+
+  .timeline-card--right .timeline-card__body {
+    text-align: left;
+  }
+}
+
 @media (max-width: 840px) {
   .project {
     grid-template-columns: 1fr;
@@ -597,23 +634,11 @@ textarea {
   }
 
   .skill-journey {
-    padding: 1.4rem 0.5rem;
+    padding: 1.6rem clamp(0.9rem, 8vw, 1.6rem);
   }
 
   .skill-journey__line {
-    left: 1.2rem;
-    height: calc(100% - 3rem);
-  }
-
-  .timeline-card,
-  .timeline-card--left,
-  .timeline-card--right {
-    align-self: stretch;
-    width: 100%;
-    margin: 0;
-  }
-
-  .timeline-card::before {
-    display: none;
+    left: clamp(1rem, 16vw, 1.8rem);
+    height: calc(100% - 2rem);
   }
 }
