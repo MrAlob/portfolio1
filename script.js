@@ -38,7 +38,7 @@ function wireNavigation() {
     btn.addEventListener("click", (event) => {
       const target = event.currentTarget.dataset.target;
       showPanel(target);
-      app.scrollIntoView({ behavior: "smooth" });
+      scrollToContent();
     });
   });
 }
@@ -144,6 +144,20 @@ function highlightTimelineCard(card) {
 function clearTimelineHighlight() {
   timelineCards.forEach((item) => {
     item.classList.remove("timeline-card--glow");
+  });
+}
+
+function scrollToContent() {
+  if (!app) return;
+  const header = document.querySelector(".site-header");
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  const buffer = 24;
+  const offset = headerHeight + buffer;
+  const target = app.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({
+    top: Math.max(target, 0),
+    behavior: "smooth",
   });
 }
 
