@@ -462,12 +462,38 @@ nav {
 .project {
   border: 1px solid var(--border);
   border-radius: 1.2rem;
-  padding: 1.5rem;
+  padding: clamp(1.4rem, 2vw, 1.8rem);
   background: rgba(255, 255, 255, 0.02);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: center;
+}
+
+.project__body {
+  display: grid;
+  gap: 0.9rem;
 }
 
 .project header {
-  margin-bottom: 0.6rem;
+  margin: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.project__media {
+  margin: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project__media img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .project__tag {
@@ -484,6 +510,40 @@ nav {
   border: 1px solid var(--border);
   padding: 0.6rem 1.2rem;
   color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ghost-btn:hover,
+.ghost-btn:focus-visible {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.project__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.project__actions .ghost-btn {
+  margin-top: 0;
+}
+
+@media (max-width: 840px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+
+  .project__media {
+    order: -1;
+  }
 }
 
 .contact-form {
