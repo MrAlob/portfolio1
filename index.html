@@ -11,45 +11,50 @@
     <div class="welcome-overlay" role="status" aria-live="polite" aria-label="Welcome to the portfolio">
       <span class="welcome-overlay__text">WELCOME</span>
     </div>
+    <!-- Language Switcher -->
+    <div style="display:flex;justify-content:flex-end;gap:0.5rem;margin-bottom:0.5rem;">
+      <button id="lang-en" class="ghost-btn" style="padding:0.3rem 0.8rem;">EN</button>
+      <button id="lang-no" class="ghost-btn" style="padding:0.3rem 0.8rem;">NO</button>
+    </div>
     <header class="site-header" data-section="top">
       <div class="brand">
-        <p class="brand__name">Murtada Al-Obaidi</p>
-        <p class="brand__role">Front-End Student</p>
+        <p class="brand__name" data-i18n="brand_name">Murtada Al-Obaidi</p>
+        <p class="brand__role" data-i18n="brand_role">Front-End Student</p>
       </div>
       <nav>
-        <button class="nav__btn" data-target="about">About</button>
-        <button class="nav__btn" data-target="skills">Skills</button>
-        <button class="nav__btn" data-target="projects">Projects</button>
-        <button class="nav__btn" data-target="blog">Blog</button>
-        <button class="nav__btn" data-target="contact">Contact</button>
+        <button class="nav__btn" data-target="about" data-i18n="nav_about">About</button>
+        <button class="nav__btn" data-target="skills" data-i18n="nav_skills">Skills</button>
+        <button class="nav__btn" data-target="projects" data-i18n="nav_projects">Projects</button>
+        <button class="nav__btn" data-target="blog" data-i18n="nav_blog">Blog</button>
+        <button class="nav__btn" data-target="contact" data-i18n="nav_contact">Contact</button>
       </nav>
     </header>
 
     <main id="app" class="app">
       <section id="about" class="panel panel--active" data-panel>
         <div>
-          <p class="eyebrow">Hello!</p>
-          <h1>I design and build friendly web experiences.</h1>
-          <p>
+          <p class="eyebrow" data-i18n="about_hello">Hello!</p>
+          <h1 data-i18n="about_headline">I design and build friendly web experiences.</h1>
+          <p data-i18n="about_intro">
             I'm a junior front-end developer who loves translating ideas into
             clean, responsive UI using just HTML, CSS, and JavaScript.
           </p>
           <ul class="highlights">
-            <li>Ship semantic, accessible layouts that work on every screen</li>
-            <li>Prototype fast with component-based CSS utility patterns</li>
-            <li>Communicate progress clearly and stay curious when problems pop up</li>
+            <li data-i18n="about_highlight1">Ship semantic, accessible layouts that work on every screen</li>
+            <li data-i18n="about_highlight2">Prototype fast with component-based CSS utility patterns</li>
+            <li data-i18n="about_highlight3">Communicate progress clearly and stay curious when problems pop up</li>
           </ul>
-          <h2 style="margin-top:2rem; font-size:1.3rem;">Interests</h2>
+          <h2 style="margin-top:2rem; font-size:1.3rem;" data-i18n="about_interests">Interests</h2>
           <ul class="highlights">
-            <li>Testing
+            <li data-i18n="about_interest_testing">Testing
               <ul style="margin-top:0.3em; margin-bottom:0.3em; font-size:0.97em; color:var(--muted);">
-                <li>Testing with Lighthouse for accessibility and performance</li>
-                <li>Testing with code (unit and integration tests)</li>
+                <li data-i18n="about_interest_testing1">Testing with Lighthouse for accessibility and performance</li>
+                <li data-i18n="about_interest_testing2">Testing with code (unit and integration tests)</li>
               </ul>
             </li>
-            <li>Security
+            <li data-i18n="about_interest_security">Security
               <ul style="margin-top:0.3em; margin-bottom:0.3em; font-size:0.97em; color:var(--muted);">
-                <li>Web Application Security: learning to protect apps from common threats</li>
+                <li data-i18n="about_interest_security1">Web Application Security: learning to protect apps from common threats</li>
               </ul>
             </li>
           </ul>
@@ -63,8 +68,8 @@
 
       <section id="skills" class="panel" data-panel>
         <div class="section-head">
-          <h2>Skills in progress</h2>
-          <p>I like learning in tiny, steady steps. Here's what I'm practicing now:</p>
+          <h2 data-i18n="skills_title">Skills in progress</h2>
+          <p data-i18n="skills_intro">I like learning in tiny, steady steps. Here's what I'm practicing now:</p>
         </div>
         <div class="skill-journey">
           <div class="skill-journey__line" aria-hidden="true"></div>
@@ -74,8 +79,8 @@
               <span class="sr-only">Node.js</span>
             </div>
             <div class="timeline-card__body">
-              <h3 class="timeline-card__title">Node.js runtime</h3>
-              <p class="timeline-card__text">
+              <h3 class="timeline-card__title" data-i18n="skills_node_title">Node.js runtime</h3>
+              <p class="timeline-card__text" data-i18n="skills_node_text">
                 Exploring server-side JavaScript, simple APIs, and tooling to round out my front-end skills.
               </p>
             </div>
@@ -86,8 +91,8 @@
               <span class="sr-only">Agile Work</span>
             </div>
             <div class="timeline-card__body">
-              <h3 class="timeline-card__title">Collaboration habits</h3>
-              <p class="timeline-card__text">
+              <h3 class="timeline-card__title" data-i18n="skills_collab_title">Collaboration habits</h3>
+              <p class="timeline-card__text" data-i18n="skills_collab_text">
                 Using GitHub, issue tracking, and weekly retros to stay aligned and iterate with teammates.
               </p>
             </div>
@@ -98,8 +103,8 @@
               <span class="sr-only">JavaScript</span>
             </div>
             <div class="timeline-card__body">
-              <h3 class="timeline-card__title">JavaScript essentials</h3>
-              <p class="timeline-card__text">
+              <h3 class="timeline-card__title" data-i18n="skills_js_title">JavaScript essentials</h3>
+              <p class="timeline-card__text" data-i18n="skills_js_text">
                 Practicing DOM scripting, state management, and fetch workflows to bring interactivity to small apps.
               </p>
             </div>
@@ -110,8 +115,8 @@
               <span class="sr-only">CSS</span>
             </div>
             <div class="timeline-card__body">
-              <h3 class="timeline-card__title">CSS layout systems</h3>
-              <p class="timeline-card__text">
+              <h3 class="timeline-card__title" data-i18n="skills_css_title">CSS layout systems</h3>
+              <p class="timeline-card__text" data-i18n="skills_css_text">
                 Experimenting with flexbox, grid, and custom properties to build fluid, themeable interfaces that scale.
               </p>
             </div>
@@ -122,8 +127,8 @@
               <span class="sr-only">HTML</span>
             </div>
             <div class="timeline-card__body">
-              <h3 class="timeline-card__title">HTML foundations</h3>
-              <p class="timeline-card__text">
+              <h3 class="timeline-card__title" data-i18n="skills_html_title">HTML foundations</h3>
+              <p class="timeline-card__text" data-i18n="skills_html_text">
                 Crafting semantic layouts, accessible forms, and tidy document structures that screen readers understand.
               </p>
             </div>
@@ -221,6 +226,6 @@
       <p>© <span id="year"></span> Murtada Al-Obaidi</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
